@@ -1,6 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
+import { fadeInUp, staggerContainer } from "../animation/variants";
+import { motion } from "framer-motion";
+
+
 
 const People = () => {
   const leadership = [
@@ -26,7 +30,7 @@ const People = () => {
     },
     {
       name: "Susannah Bard",
-      position: "Managing Director", 
+      position: "Managing Director",
       location: "US",
       image: "https://images.ctfassets.net/8fjb1swihtib/3ZP61BgM7wV2IKzkaBfMEl/f264b4c126de78dab96280eda72a45ad/3.png?w=360",
       hoverImages: [
@@ -85,46 +89,52 @@ const People = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-background grid-overlay">
-          <div className="container mx-auto px-6">
+          <motion.div variants={fadeInUp}
+            initial="hidden"
+            animate="visible" className="container mx-auto px-6">
             <div className="max-w-4xl">
-              <h1 className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
+              <motion.h1 variants={fadeInUp}
+                initial="hidden"
+                animate="visible" className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
                 People
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              </motion.h1>
+              <motion.p variants={fadeInUp}
+                initial="hidden"
+                animate="visible" className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Our teams are made up of industry leading talent with diverse backgrounds, servicing clients in key markets around the world.
-              </p>
+              </motion.p>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Leadership Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-bold mb-12 text-foreground">Leadership</h2>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {leadership.map((person, index) => (
                 <div key={index} className="group cursor-pointer">
                   <div className="relative overflow-hidden mb-6 aspect-[3/4]">
-                    <img 
-                      src={person.image} 
+                    <img
+                      src={person.image}
                       alt={person.name}
                       className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                     />
                     {person.hoverImages.length > 0 && (
-                      <img 
-                        src={person.hoverImages[0]} 
+                      <img
+                        src={person.hoverImages[0]}
                         alt={`${person.name} hover`}
                         className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                       />
                     )}
                     <div className="absolute inset-0 border border-border group-hover:border-primary transition-colors duration-300"></div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {person.name}
@@ -144,19 +154,19 @@ const People = () => {
         <section className="py-20 bg-muted/20">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-bold mb-12 text-foreground">Our Team</h2>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((person, index) => (
                 <div key={index} className="group cursor-pointer">
                   <div className="relative overflow-hidden mb-6 aspect-[3/4]">
-                    <img 
-                      src={person.image} 
+                    <img
+                      src={person.image}
                       alt={person.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 border border-border group-hover:border-primary transition-colors duration-300"></div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {person.name}

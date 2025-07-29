@@ -97,8 +97,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-16 pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-muted-foreground">
+        <div className="border-t border-border mt-16 pt-8 flex flex-col md:flex-row md:items-center md:justify-between">
+          <p className="text-muted-foreground order-3 md:order-1 mt-4 md:mt-0 text-center md:text-left">
             Website Designed and Built by{" "}
             <a
               href="https://webalchemy.co.in"
@@ -110,10 +110,11 @@ const Footer = () => {
             </a>
           </p>
 
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground order-1 md:order-2 text-center md:text-center">
             © 2025 NewsMakerIndia. All rights reserved.
           </p>
-          <div className="flex space-x-8 mt-4 md:mt-0">
+
+          <div className="flex justify-center md:justify-end space-x-8 order-2 md:order-3 mt-4 md:mt-0">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy
             </a>
@@ -122,6 +123,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
+
       </div>
     </footer>
   );

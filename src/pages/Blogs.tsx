@@ -2,6 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
+import { fadeInUp, staggerContainer } from "../animation/variants";
+import { motion } from "framer-motion";
+
+
 
 const Blogs = () => {
   const navigate = useNavigate();
@@ -70,20 +74,26 @@ const Blogs = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-background grid-overlay">
-          <div className="container mx-auto px-6">
+          <motion.div variants={fadeInUp}
+            initial="hidden"
+            animate="visible" className="container mx-auto px-6">
             <div className="max-w-4xl">
-              <h1 className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
+              <motion.h1 variants={fadeInUp}
+                initial="hidden"
+                animate="visible" className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
                 Blog
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              </motion.h1>
+              <motion.p variants={fadeInUp}
+                initial="hidden"
+                animate="visible" className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Insights, strategies, and perspectives from our team on the latest trends in creative marketing and product design.
-              </p>
+              </motion.p>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Blog Grid */}
@@ -91,20 +101,20 @@ const Blogs = () => {
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
-                <article 
-                  key={post.id} 
+                <article
+                  key={post.id}
                   className="group cursor-pointer"
                   onClick={() => handleBlogClick(post.id)}
                 >
                   <div className="relative overflow-hidden mb-4 aspect-[4/3]">
-                    <img 
-                      src={post.image} 
+                    <img
+                      src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 border border-border group-hover:border-primary transition-colors duration-300"></div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-sm text-muted-foreground">
                       <span>{post.date}</span>

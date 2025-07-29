@@ -11,11 +11,21 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "../animation/variants";
+
+
+
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Please enter a valid email"),
+  phone: z
+    .string()
+    .min(10, "Phone number must be at least 10 digits")
+    .max(15, "Phone number must be at most 15 digits")
+    .regex(/^\d+$/, "Phone number must contain only digits"),
   jobTitle: z.string().optional(),
   company: z.string().optional(),
   message: z.string().min(1, "Message is required"),
@@ -33,6 +43,7 @@ const Contact = () => {
       firstName: "",
       lastName: "",
       email: "",
+      Phone: "",
       jobTitle: "",
       company: "",
       message: "",
@@ -40,38 +51,56 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log("Form submitted:", data);
-    
+  setIsSubmitting(true);
+
+  try {
+    const res = await fetch("http://localhost:5000/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
     toast({
       title: "Message sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      description: result.message || "Thanks for reaching out. We'll reply soon.",
     });
-    
+
     form.reset();
+  } catch (error) {
+    console.error(error);
+    toast({
+      title: "Error",
+      description: "Something went wrong while sending your message.",
+      variant: "destructive",
+    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-background grid-overlay">
-        <div className="container mx-auto px-6">
+        <motion.div variants={fadeInUp}
+          initial="hidden"
+          animate="visible" className="container mx-auto px-6">
           <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
+            <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
               Work with us
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+            </motion.h1>
+            <motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
               From the smallest crafted creative to a moonshot idea, we have what it takes to make your project come to life.
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Contact Form Section */}
@@ -81,7 +110,7 @@ const Contact = () => {
             {/* Form */}
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold mb-8 text-foreground">Let's get started</h2>
-              
+
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -113,20 +142,35 @@ const Contact = () => {
                       )}
                     />
                   </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-foreground">Email *</FormLabel>
+                          <FormControl>
+                            <Input type="email" placeholder="Email" className="h-12" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-foreground">Phone *</FormLabel>
+                          <FormControl>
+                            <Input type="tel" placeholder="Phone number" className="h-12" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-foreground">Email *</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="Email" className="h-12" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <FormField
@@ -165,10 +209,10 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel className="text-foreground">Message *</FormLabel>
                         <FormControl>
-                          <Textarea 
-                            placeholder="Tell us about your project..." 
-                            className="min-h-[120px]" 
-                            {...field} 
+                          <Textarea
+                            placeholder="Tell us about your project..."
+                            className="min-h-[120px]"
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
@@ -176,8 +220,8 @@ const Contact = () => {
                     )}
                   />
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     disabled={isSubmitting}
                     className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-full"
                   >
@@ -191,18 +235,18 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-foreground">Contact Number</h3>
-                <a 
-                  href="callto:9819416689" 
+                <a
+                  href="callto:9819416689"
                   className="text-primary hover:text-primary/80 transition-colors text-lg"
                 >
-                  +91 9819416689  
+                  +91 9819416689
                 </a>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-foreground">General enquiries</h3>
-                <a 
-                  href="mailto:Team@newsmakermediagroup.com" 
+                <a
+                  href="mailto:Team@newsmakermediagroup.com"
                   className="text-primary hover:text-primary/80 transition-colors text-lg"
                 >
                   Team@newsmakermediagroup.com

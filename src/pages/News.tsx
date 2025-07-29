@@ -2,9 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import newsItems from "@/data/newsItems";
+import { fadeInUp, staggerContainer } from "../animation/variants";
+import { motion } from "framer-motion";
+
 
 const News = () => {
-  
+
 
     return (
         <div className="min-h-screen bg-background">
@@ -13,16 +16,19 @@ const News = () => {
             <main>
                 {/* Hero Section */}
                 <section className="pt-32 pb-20 bg-background grid-overlay">
-                    <div className="container mx-auto px-6">
+                    <motion.div variants={fadeInUp} initial="hidden"
+                        animate="visible" className="container mx-auto px-6">
                         <div className="max-w-4xl">
-                            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
+                            <motion.h1 variants={fadeInUp} initial="hidden"
+                                animate="visible" className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
                                 News and insights
-                            </h1>
-                            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                            </motion.h1>
+                            <motion.p variants={fadeInUp} initial="hidden"
+                                animate="visible" className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
                                 Stay updated with our latest projects, industry insights, awards, and company developments.
-                            </p>
+                            </motion.p>
                         </div>
-                    </div>
+                    </motion.div>
                 </section>
 
                 {/* News Grid */}
