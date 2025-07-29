@@ -190,22 +190,22 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">New business</h3>
+                <h3 className="text-xl font-semibold mb-4 text-foreground">Contact Number</h3>
                 <a 
-                  href="mailto:newbiz@toaster.co" 
+                  href="callto:9819416689" 
                   className="text-primary hover:text-primary/80 transition-colors text-lg"
                 >
-                  newbiz@toaster.co
+                  +91 9819416689  
                 </a>
               </div>
 
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-foreground">General enquiries</h3>
                 <a 
-                  href="mailto:hello@toaster.co" 
+                  href="mailto:Team@newsmakermediagroup.com" 
                   className="text-primary hover:text-primary/80 transition-colors text-lg"
                 >
-                  hello@toaster.co
+                  Team@newsmakermediagroup.com
                 </a>
               </div>
             </div>

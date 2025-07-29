@@ -1,27 +1,58 @@
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+  useEffect(() => {
+    const consent = localStorage.getItem("cookieConsent");
+    if (!consent) {
+      setShowCookieBanner(true);
+    }
+  }, []);
+
+  const handleAcceptCookies = () => {
+    localStorage.setItem("cookieConsent", "true");
+    setShowCookieBanner(false);
+  };
+
+  const handleRejectCookies = () => {
+    localStorage.setItem("cookieConsent", "false");
+    setShowCookieBanner(false);
+  };
   return (
     <footer className="bg-background grid-overlay">
       {/* Cookie consent banner */}
-      <div className="bg-primary text-white py-4">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm mb-4 md:mb-0">
-            Toaster serves cookies to analyse traffic to this site. Information about your use of our site is shared for that purpose.{" "}
-            <a href="#" className="underline hover:no-underline">
-              See details.
-            </a>
-          </p>
-          <div className="flex gap-4">
-            <Button variant="ghost" size="sm" className="text-white hover:bg-white/20 rounded-full">
-              No thanks
-            </Button>
-            <Button variant="secondary" size="sm" className="bg-white text-primary hover:bg-white/90 rounded-full">
-              OK, got it
-            </Button>
+      {showCookieBanner && (
+        <div className="bg-primary text-white py-4">
+          <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <p className="text-sm mb-4 md:mb-0">
+              NewsMaker Media serves cookies to analyse traffic to this site. Information about your use of our site is shared for that purpose.{" "}
+              <a href="#" className="underline hover:no-underline">
+                See details.
+              </a>
+            </p>
+            <div className="flex gap-4">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleRejectCookies}
+                className="text-white hover:bg-white/20 rounded-full"
+              >
+                No thanks
+              </Button>
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={handleAcceptCookies}
+                className="bg-white text-primary hover:bg-white/90 rounded-full"
+              >
+                OK, got it
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main footer content */}
       <div className="container mx-auto px-6 py-16">
@@ -29,19 +60,17 @@ const Footer = () => {
           <div className="md:col-span-2">
             <img
               src="/img/colorwhite.png"
-              alt="Toaster Logo"
+              alt="Newsmakermedia Logo"
               className="h-12 mb-6"
             />
             <p className="text-muted-foreground mb-8 max-w-md text-lg leading-relaxed">
-              An international creative agency specializing in product marketing, working at the intersection of creativity, culture and technology.
+              Newsmaker Media and Communications is a full-service communications consultancy built for the evolving media landscape. Founded with a vision to bring authenticity and agility into the PR and marketing ecosystem, we help brands tell stories that resonate, engage, and influence.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-lg">
+              <a href="https://www.linkedin.com/company/96441032/admin/dashboard/" className="text-muted-foreground hover:text-primary transition-colors text-lg">
                 LinkedIn
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-lg">
-                Twitter
-              </a>
+
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-lg">
                 Instagram
               </a>
@@ -69,6 +98,18 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-16 pt-8 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-muted-foreground">
+            Website Designed and Built by{" "}
+            <a
+              href="https://webalchemy.co.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              WebAlchemy
+            </a>
+          </p>
+
           <p className="text-muted-foreground">
             © 2025 NewsMakerIndia. All rights reserved.
           </p>
