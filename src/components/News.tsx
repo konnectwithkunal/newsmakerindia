@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 const News = () => {
-  const itemsPerPage = 4;
+  const itemsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(0);
 
   const totalPages = Math.ceil(newsItems.length / itemsPerPage);
@@ -25,12 +25,12 @@ const News = () => {
 
 
   return (
-    <section id="news" className="py-20 bg-background grid-overlay">
+    <section id="news" className="py-20 bg-background grid-mob  md:grid-overlay">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-16">
           <div className="max-w-4xl">
             <h2 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">News</h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg md:text-2xl text-white leading-relaxed">
               Stay updated with our latest insights, awards, and company developments.
             </p>
           </div>
@@ -46,7 +46,7 @@ const News = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
           >
             {visibleItems.map((item, index) => (
               <a
@@ -61,13 +61,13 @@ const News = () => {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 border border-border group-hover:border-primary transition-colors duration-300"></div>
                   </div>
                   <div className="space-y-3">
                     <div className="text-sm text-muted-foreground">{item.date}</div>
-                    <h3 className="text-xl font-bold leading-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl md:text-2xl leading-tight text-white group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
                     <div className="flex flex-wrap gap-2">

@@ -1,105 +1,167 @@
 import { Button } from "@/components/ui/button";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
-  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
-  
+  const [selectedService, setSelectedService] = useState(0);
+
   const services = [
     {
       title: "Media Relations",
-      description: "In today's fast-paced media landscape, securing coverage for your brand can be a game-changer. At Newsmaker Media Group our expert media relations services are designed to amplify your brand's voice and elevate its visibility. We take a strategic and personalized approach to media relations, crafting compelling stories that resonate with your target audience. Our team of experienced professionals builds and maintains relationships with top journalists, editors, and media outlets, ensuring that your brand gets the coverage it deserves."
+      description: "In today's fast-paced media landscape, securing coverage for your brand can be a game-changer. At Newsmaker Media Group our expert media relations services are designed to amplify your brand's voice and elevate its visibility.",
+      subServices: [
+        {
+          title: "Media Outreach",
+          description: "Building relationships with media outlets and pitching stories."
+        },
+        {
+          title: "Press Release Distribution",
+          description: "Distributing press releases to targeted media outlets."
+        },
+        {
+          title: "Story Pitching",
+          description: "Pitching stories and ideas to media outlets."
+        },
+        {
+          title: "Media Training",
+          description: "Providing media training for clients."
+        }
+      ]
     },
     {
       title: "Event Management",
-      description: "Event management services at Newsmaker Media Group, we specialize in creating unforgettable events that exceed your expectations. Our expert event management services cover every aspect of event planning, from concept to execution. Whether you're planning a corporate event, wedding, or social gathering, our team is dedicated to bringing your vision to life. Our team of experienced event professionals is dedicated to delivering exceptional events that exceed your expectations. With a passion for creativity and attention to detail, we're committed to making your event unforgettable."
+      description: "Event management services at Newsmaker Media Group, we specialize in creating unforgettable events that exceed your expectations. Our expert event management services cover every aspect of event planning, from concept to execution.",
+      subServices: [
+        {
+          title: "Event Conceptualization",
+          description: "Developing event concepts and themes."
+        },
+        {
+          title: "Event Marketing",
+          description: "Promoting events through various marketing channels."
+        },
+        {
+          title: "Venue Management",
+          description: "Selecting and managing event venues."
+        },
+        {
+          title: "Logistics Management",
+          description: "Managing event logistics, including catering, audio-visual, and more."
+        }
+      ]
     },
     {
-      title: "Crisis Management Services",
-      description: "In today's fast-paced and unpredictable business environment, crises can strike at any moment, threatening your organization's reputation and operations. At Newsmaker Media and Communications, we understand the importance of effective crisis management in protecting your organization's image and credibility. Our expert crisis management services are designed to help you prepare for, respond to, and recover from crises that challenge your organization's reputation."
+      title: "Crisis Management",
+      description: "In today's fast-paced and unpredictable business environment, crises can strike at any moment, threatening your organization's reputation and operations. At Newsmaker Media and Communications, we understand the importance of effective crisis management.",
+      subServices: [
+        {
+          title: "Online Reputation Management",
+          description: "Managing online reputation during crises, including search engine optimization and content creation."
+        },
+        {
+          title: "Crisis Communications Planning",
+          description: "Developing crisis communications plans and strategies."
+        },
+        {
+          title: "Social Media Crisis Management",
+          description: "Managing social media during crises, including monitoring, response, and mitigation."
+        }
+      ]
     },
     {
-      title: "Video Production Services",
-      description: "At Newsmaker Media Group, we specialize in creating high-quality videos that engage, inform, and inspire audiences. Our expert video production services cover every aspect of video production, from concept development to post-production. Whether you're looking to showcase your brand, products, or services, or tell a compelling story, we're here to help."
-    },
-    {
-      title: "Podcast and Broadcast Services",
-      description: "At Newsmaker Media Group, we specialize in creating high-quality podcasts and broadcasts that engage and inform audiences. Our team of experienced professionals will handle every aspect of production, from recording to distribution. Whether you're looking to reach a wider audience, build your brand, or share your message, we're here to help."
+      title: "Content Creation",
+      description: "At Newsmaker Media Group, we specialize in creating high-quality content that engages, informs, and inspires audiences. Our expert content creation services cover every aspect of content development, from strategy to execution.",
+      subServices: [
+        {
+          title: "Article Writing",
+          description: "Writing high-quality articles for websites, blogs, and more."
+        },
+        {
+          title: "Blog Writing",
+          description: "Creating engaging blog content for various industries."
+        },
+        {
+          title: "Content Strategy",
+          description: "Developing content strategies for businesses."
+        },
+        {
+          title: "SEO Content",
+          description: "Creating SEO-optimized content for websites."
+        },
+        {
+          title: "Content Marketing",
+          description: "Developing content marketing strategies for businesses."
+        }
+      ]
     }
   ];
 
+
   return (
-    <section id="services" className="py-20 bg-background grid-overlay">
+    <section id="services" className="py-20" style={{backgroundColor: '#040214'}}>
       <div className="container mx-auto px-6">
-        <div 
-          ref={titleRef}
-          className={`max-w-4xl mb-16 transition-all duration-700 ${
-            titleVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-[20px]'
-          }`}
-        >
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-foreground">Services</h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+        <div className="max-w-4xl mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">Services</h2>
+          <p className="text-xl md:text-2xl text-white leading-relaxed">
             We deliver Product Marketing, Branding and Interactive Experiences, driven by a deep understanding of the fast-changing marketing landscape and emerging technologies.
           </p>
         </div>
         
-        <div 
-          ref={gridRef}
-          className={`grid md:grid-cols-3 gap-12 mb-16 transition-all duration-700 delay-200 ${
-            gridVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-[20px]'
-          }`}
-        >
-          {services.map((service, index) => (
-            <HoverCard key={index}>
-              <HoverCardTrigger asChild>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div 
-                      className="group cursor-pointer p-6 rounded-lg border border-border/50 hover:border-primary/50 transition-all duration-300 bg-background/50 hover-glow animate-scale-in"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        Hover or click to learn more about this service
-                      </p>
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl">
-                    <DialogTitle className="text-2xl font-bold text-foreground mb-4">
+        <div className="grid lg:grid-cols-2 gap-16 mb-16">
+          {/* Main Services - Left Side */}
+          <div className="space-y-2">
+            {services.map((service, index) => (
+              <div key={index}>
+                <div 
+                  className={`group cursor-pointer p-6 border-b-2 border-white hover:border-white transition-all duration-300 ${
+                    selectedService === index ? 'border-white' : ''
+                  }`}
+                  onClick={() => {
+                    const serviceSlug = service.title.toLowerCase().replace(/\s+/g, '-');
+                    window.location.href = `/services?service=${serviceSlug}`;
+                  }}
+                  onMouseEnter={() => setSelectedService(index)}
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className={`text-2xl md:text-3xl font-bold transition-all duration-300 ${
+                      selectedService === index ? 'text-primary translate-x-2' : 'text-foreground group-hover:text-primary group-hover:translate-x-2'
+                    }`}>
                       {service.title}
-                    </DialogTitle>
-                    <DialogDescription className="text-muted-foreground leading-relaxed text-base">
-                      {service.description}
-                    </DialogDescription>
-                  </DialogContent>
-                </Dialog>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-96 p-6 bg-background border border-border shadow-lg">
-                <div className="space-y-4">
-                  <h4 className="text-xl font-bold text-foreground">{service.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
+                    </h3>
+                    <svg 
+                      className={`w-8 h-8 transition-all duration-300 ${
+                        selectedService === index ? 'text-primary translate-x-2' : 'text-muted-foreground group-hover:text-primary group-hover:translate-x-2'
+                      }`}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Sub Services - Right Side */}
+          <div className="space-y-6 hidden md:block">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {services[selectedService].subServices.map((subService, index) => (
+                <div key={index} className="border-2 border-white p-4 hover:border-primary/30 transition-all duration-300" style={{backgroundColor: '#040214'}}>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wide">
+                    {subService.title}
+                  </h4>
+                  <p className="text-white text-sm leading-relaxed">
+                    {subService.description}
                   </p>
                 </div>
-              </HoverCardContent>
-            </HoverCard>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
         
-        <div className="text-left">
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full px-8 hover-glow animate-pulse-glow"
-          >
-            See more services
-          </Button>
-        </div>
+       
       </div>
     </section>
   );

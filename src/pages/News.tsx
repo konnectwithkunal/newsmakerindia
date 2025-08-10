@@ -24,7 +24,7 @@ const News = () => {
                                 News and insights
                             </motion.h1>
                             <motion.p variants={fadeInUp} initial="hidden"
-                                animate="visible" className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                                animate="visible" className="text-xl md:text-2xl text-white max-w-2xl leading-relaxed">
                                 Stay updated with our latest projects, industry insights, awards, and company developments.
                             </motion.p>
                         </div>

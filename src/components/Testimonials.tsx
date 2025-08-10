@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
 const Testimonials = () => {
   const testimonials = [
@@ -22,49 +24,83 @@ const Testimonials = () => {
     }
   ];
 
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    if (!api) return;
+    const id = setInterval(() => {
+      if (!pausedRef.current) api.scrollNext();
+    }, 4000);
+    return () => clearInterval(id);
+  }, [api]);
+
+  const handleMouseEnter = () => {
+    pausedRef.current = true;
+  };
+  const handleMouseLeave = () => {
+    pausedRef.current = false;
+  };
+
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6">
             What Our Clients Say
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-white text-lg max-w-2xl mx-auto">
             Hear from our valued clients about their experience working with Newsmaker Media and Communications
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-background border-border/50 hover:border-primary/50 transition-all duration-300 h-full">
-              <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex-1 mb-6">
-                  <p className="text-muted-foreground leading-relaxed italic">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-muted">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      {testimonial.author}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.position}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          setApi={setApi}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="basis-full">
+                <Card className="bg-transparent border-0 shadow-none h-full">
+                  <CardContent className="p-0 md:p-10 lg:p-12 flex flex-col h-full">
+                    <div className="flex-1 mb-8">
+                      <div className="text-7xl md:text-8xl text-foreground/20 font-black mb-6">"</div>
+                      <p className="text-2xl md:text-3xl leading-relaxed text-foreground">
+                        {testimonial.quote}
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4 pt-6 mt-8 border-t border-border/30">
+                      <div className="w-16 h-16 rounded-full overflow-hidden bg-muted ring-2 ring-primary/20 grayscale hover:grayscale-0 transition">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground text-base md:text-lg">
+                          {testimonial.author}
+                        </h4>
+                        <p className="text-muted-foreground">
+                          {testimonial.position}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-20" />
+          <CarouselNext className="hidden md:flex -right-20" />
+        </Carousel>
       </div>
     </section>
   );
