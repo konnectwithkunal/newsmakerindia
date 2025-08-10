@@ -104,7 +104,7 @@ const People = () => {
               </motion.h1>
               <motion.p variants={fadeInUp}
                 initial="hidden"
-                animate="visible" className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                animate="visible" className="text-xl md:text-2xl text-white max-w-2xl leading-relaxed">
                 Our teams are made up of industry leading talent with diverse backgrounds, servicing clients in key markets around the world.
               </motion.p>
             </div>

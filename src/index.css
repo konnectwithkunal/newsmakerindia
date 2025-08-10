@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     /* Toaster Dark Theme */
-    --background: 0 0% 8%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
     --card: 0 0% 10%;
     --card-foreground: 0 0% 98%;
@@ -52,6 +55,26 @@
     background-image: 
       linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: 115px 115px;
+  }
+  .grid-mob {
+    background-image: 
+      linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+    /* Lighter grid overlay for about section */
+  .grid-overlay-light {
+    background-image: 
+      linear-gradient(#CCCCCC 1.15px, transparent 1.15px),
+      linear-gradient(90deg, #CCCCCC 1.15px, transparent 1.15px);
+    background-size: 115px 115px;
+  }
+  .grid-mob-light {
+    background-image: 
+      linear-gradient(#CCCCCC 1.15px, transparent 1.15px),
+      linear-gradient(90deg, #CCCCCC 1.15px, transparent 1.15px);
     background-size: 50px 50px;
   }
   
@@ -109,7 +132,7 @@
 .arrow {
   width: 7em;
   height: 4em;
-  margin-left: 460px;
+  margin-left: 600px;
   animation: left-right 2s infinite;
   display: block;
   color: black;

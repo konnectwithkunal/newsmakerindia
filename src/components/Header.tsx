@@ -46,9 +46,14 @@ const Header = () => {
           <a onClick={() => handleNavClick("about")} className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"}`}>
             About us
           </a>
-          <a onClick={() => handleNavClick("services")} className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"}`}>
+          <a
+            onClick={() => navigate("/services")}
+            className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"
+              }`}
+          >
             Services
           </a>
+
 
           <a onClick={() => navigate("/people")} className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"}`}>
             People

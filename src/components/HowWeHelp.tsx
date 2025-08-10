@@ -1,45 +1,46 @@
 const HowWeHelp = () => {
   const benefits = [
     {
-      title: "Increase Brand Awareness",
-      description: "Strategic campaigns that amplify your brand's visibility and reach across all relevant channels.",
+      title: "Trendsetters, Not Followers",
+      description: "We shape conversations and set trends in the media landscape.",
       icon: "📈"
     },
     {
-      title: "Drive Customer Engagement",
-      description: "Create meaningful connections with your audience through compelling storytelling and interactive experiences.",
+      title: "Fresh & Dynamic Approach",
+      description: "As a young agency, we bring bold ideas and innovative thinking to every campaign.",
       icon: "🎯"
     },
     {
-      title: "Boost Sales & Revenue",
-      description: "Convert prospects into customers with persuasive messaging and optimized conversion funnels.",
+      title: "Targeted Brand Amplification",
+      description: "We ensure your message reaches the right people, in the right places, with maximum impact.",
       icon: "💰"
     },
     {
-      title: "Build Brand Loyalty",
-      description: "Foster long-term relationships with customers through consistent, valuable brand experiences.",
+      title: "Creative + Strategic PR",
+      description: "We combine traditional media relations with a digital-first mindset for powerful results.",
       icon: "❤️"
     },
     {
-      title: "Market Differentiation",
-      description: "Stand out from competitors with unique positioning and distinctive brand identity.",
+      title: "Diverse Media Expertise",
+      description: "From top-tier editorial features to influencer collaborations, we know how to make your story matter.",
       icon: "⭐"
     },
     {
-      title: "Accelerate Growth",
-      description: "Scale your business with strategies designed to support sustainable, long-term growth.",
+      title: "Consistent Brand Relevance",
+      description: "We keep your brand authentic, visible, and ahead in a fast-changing environment.",
       icon: "🚀"
     }
   ];
 
   return (
-    <section className="py-20 bg-background grid-overlay">
+    <section className="py-20 bg-background grid-mob  md:grid-overlay">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             How We Help Your Business
           </h2>
-          <div className="max-w-4xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
+         {/*
+         <div className="max-w-4xl mx-auto space-y-6 text-muted-foreground leading-relaxed">
             <p className="text-lg">
               At Newsmaker Media and Communications, we don't just follow trends — we help set them.
             </p>
@@ -55,17 +56,17 @@ const HowWeHelp = () => {
             <p className="text-primary font-medium">
               Let's craft a PR strategy that grows with your business — and always stays a step ahead.
             </p>
-          </div>
+          </div>*/} 
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="p-8 border border-border rounded-lg hover:border-primary transition-colors duration-300 group">
               <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                 {benefit.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+              <p className=" text-lg text-white leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>
