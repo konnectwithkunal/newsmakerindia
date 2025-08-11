@@ -29,7 +29,7 @@ const News = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-16">
           <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">News</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">In the Spotlight</h2>
             <p className="text-lg md:text-2xl text-white leading-relaxed">
               Stay updated with our latest insights, awards, and company developments.
             </p>

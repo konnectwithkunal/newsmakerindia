@@ -36,7 +36,7 @@ const Index = () => {
       <About />
       <Services />
       <Clients />
-      <EventsLaunches />
+     {/*<EventsLaunches />*/} 
       <WhyChoose />
       {/* <Process /> */}
       <HowWeHelp />

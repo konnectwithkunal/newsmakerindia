@@ -61,7 +61,7 @@ const Footer = () => {
       <section aria-label="Get in touch" className="bg-primary">
         <div className="container mx-auto px-6 py-20 md:py-28 text-center">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-background mb-8">
-            Marketing a product?
+            Let us get your brand noticed
           </h2>
           <Button asChild className="bg-foreground text-background rounded-full px-6 py-6 text-lg md:text-xl font-semibold hover:bg-foreground/90">
             <a href={`mailto:${email}`} aria-label="Get in touch via email">
