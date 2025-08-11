@@ -21,7 +21,7 @@ const News = () => {
                         <div className="max-w-4xl">
                             <motion.h1 variants={fadeInUp} initial="hidden"
                                 animate="visible" className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
-                                News and insights
+                                In the Spotlight
                             </motion.h1>
                             <motion.p variants={fadeInUp} initial="hidden"
                                 animate="visible" className="text-xl md:text-2xl text-white max-w-2xl leading-relaxed">
