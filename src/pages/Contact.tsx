@@ -54,7 +54,7 @@ const Contact = () => {
   setIsSubmitting(true);
 
   try {
-    const res = await fetch("http://localhost:5000/send", {
+    const res = await fetch("https://newsmakerindia.onrender.com/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
