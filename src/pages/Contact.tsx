@@ -43,7 +43,7 @@ const Contact = () => {
       firstName: "",
       lastName: "",
       email: "",
-      Phone: "",
+      phone: "",
       jobTitle: "",
       company: "",
       message: "",
