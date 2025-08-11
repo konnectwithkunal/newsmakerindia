@@ -115,7 +115,7 @@ const Header = () => {
               About us
             </a>
             <a
-              onClick={() => handleNavClick("services")}
+              onClick={() =>{setIsMobileMenuOpen(false); navigate("services");}}
               className="block py-2 text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               Services

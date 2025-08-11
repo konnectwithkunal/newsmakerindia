@@ -50,8 +50,8 @@ app.post("/send", async (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: "kuffrae9@gmail.com",
-    subject: `Contact Form from ${firstName} ${lastName}`,
+    to: "Newsmakerdesk@gmail.com",
+    subject: `New Inquiry on News Maker Group Website from ${firstName} ${lastName}`,
     html: `
       <p><strong>Name:</strong> ${firstName} ${lastName}</p>
       <p><strong>Email:</strong> ${email}</p>

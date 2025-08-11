@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom"; 
+
 
 const Footer = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(false);
@@ -122,21 +124,69 @@ const Footer = () => {
             <nav aria-label="Services">
               <h4 className="font-semibold mb-6 text-foreground text-2xl">Services</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">Media Relations</a></li>
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">Event Management</a></li>
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">Crisis Management</a></li>
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">Content Creation</a></li>
+                <li>
+      <Link
+        to="/services?service=media-relations"
+        className="text-white text-xl hover:text-foreground transition-colors"
+      >
+        Media Relations
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/services?service=event-management"
+        className="text-white text-xl hover:text-foreground transition-colors"
+      >
+        Event Management
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/services?service=crisis-management"
+        className="text-white text-xl hover:text-foreground transition-colors"
+      >
+        Crisis Management
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/services?service=content-creation"
+        className="text-white text-xl hover:text-foreground transition-colors"
+      >
+        Content Creation
+      </Link>
+    </li>
               </ul>
             </nav>
 
             <nav aria-label="Company">
               <h4 className="font-semibold mb-6 text-foreground text-2xl">Company</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">About us</a></li>
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">Services</a></li>
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">People</a></li>
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">News</a></li>
-                <li><a href="#" className="text-white text-xl hover:text-foreground transition-colors">Blogs</a></li>
+                <li>
+      <Link to="/" className="text-white text-xl hover:text-foreground transition-colors">
+        About us
+      </Link>
+    </li>
+    <li>
+      <Link to="/services" className="text-white text-xl hover:text-foreground transition-colors">
+        Services
+      </Link>
+    </li>
+    <li>
+      <Link to="/people" className="text-white text-xl hover:text-foreground transition-colors">
+        People
+      </Link>
+    </li>
+    <li>
+      <Link to="/news" className="text-white text-xl hover:text-foreground transition-colors">
+        In the Spotlight
+      </Link>
+    </li>
+    <li>
+      <Link to="/blogs" className="text-white text-xl hover:text-foreground transition-colors">
+        Blog
+      </Link>
+    </li>
               </ul>
             </nav>
           </div>
