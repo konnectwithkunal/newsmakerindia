@@ -49,7 +49,8 @@ app.post("/send", async (req, res) => {
   }
 
   const mailOptions = {
-    from: email,
+    from: process.env.MAIL_USER,
+    replyTo: email,
     to: "Newsmakerdesk@gmail.com, konnectwithkunal@gmail.com",
     subject: `New Inquiry on News Maker Group Website from ${firstName} ${lastName}`,
     html: `
@@ -86,3 +87,5 @@ process.on('unhandledRejection', (err) => {
   console.error('Unhandled Rejection:', err);
   process.exit(1);
 });
+
+console.log("MAIL_USER in use:", process.env.MAIL_USER);
