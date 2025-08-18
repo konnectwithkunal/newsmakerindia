@@ -21,16 +21,16 @@ const Testimonials = () => {
     {
       quote:
         "Its been nearly four years I have been associated with Newsmaker Media and Communication. The journey has been tumultuous and so rewarding. Ankit and his team are my go-to guys when I have any issues regarding media whether it is print, digital or screen.",
-      author: "Valued Client",
-      position: "4-Year Partnership",
+      author: "Dr. Ridhima Khamesra",
+      position: "Dietician",
       image:
         "/lovable-uploads/10ca7487-f6ca-439e-8cbb-92550a9cd052.png",
     },
     {
       quote:
-        "Newsmaker Media and Communications has been a valuable partner in amplifying IATO's voice across the industry. Their professionalism, creativity, and deep understanding of the tourism sector have consistently delivered impactful results.",
-      author: "IATO Representative",
-      position: "Tourism Industry Partner",
+        "Newsmaker Media and Communications has been a valuable partner in amplifying IATO's voice across the industry. Their professionalism, creativity, and deep understanding of the tourism sector have consistently delivered impactful results. We truly appreciate their dedication and look forward to continued collaboration",
+      author: "Ravi Gosain",
+      position: "President, IATO",
       image:
         "/lovable-uploads/22ae4ec2-13b6-4e38-8321-7adb9d755bcf.png",
     },
