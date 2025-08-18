@@ -60,15 +60,7 @@ function About() {
           </p>
 
           
-            <>
-              <p className=" bg-transparent flex items-start text-2xl text-[#000]">
-                <span>
-                  With a rich portfolio across sectors including healthcare, tech, education, lifestyle, and public affairs, our campaigns are data-informed, digitally empowered, and media-savvy. Whether you're an emerging startup or an established brand, we act as an extension of your team—strategic, responsive, and always outcome-driven.
-                </span>
-              </p>
-
-            
-            </>
+           
           
 
          
