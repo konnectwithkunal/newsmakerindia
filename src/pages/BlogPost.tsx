@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import blogPosts from "@/data/blogPosts";
-
+import HeaderWhite from "@/components/HeaderWhite";
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -14,8 +14,8 @@ const BlogPost = () => {
 
   if (!currentPost) {
     return (
-      <div className="min-h-screen bg-background">
-        <Header />
+      <div className="min-h-screen bg-white">
+        <HeaderWhite />
         <main className="pt-32 pb-20">
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-4xl font-bold mb-4 text-foreground">Blog Post Not Found</h1>
@@ -34,18 +34,18 @@ const BlogPost = () => {
   }
 
   return (
-   <div className="min-h-screen bg-background">
-  <Header />
+   <div className="min-h-screen bg-white">
+  <HeaderWhite />
   <main>
    {/* Hero Section */}
-<section className="pt-32 pb-12 bg-background">
+<section className="pt-32 pb-12 bg-white">
   <div className="container mx-auto px-6">
     <Button
       variant="ghost"
       onClick={() => navigate("/blogs")}
-      className="mb-8 text-muted-foreground hover:text-primary"
+      className="mb-8 text-[#131A22] hover:text-primary"
     >
-      <ArrowLeft className="mr-2 h-4 w-4" />
+      <ArrowLeft className="mr-2 h-4 w-4 " />
       Back to Blogs
     </Button>
 
@@ -57,20 +57,20 @@ const BlogPost = () => {
       ))}
     </div>
 
-    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground leading-tight">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black leading-tight">
       {currentPost.title}
     </h1>
 
     <div className="flex flex-wrap gap-6 text-muted-foreground mb-8">
-      <div className="flex items-center gap-2">
-        <Calendar className="h-4 w-4" />
+      <div className="flex items-center gap-2 text-[#131A22]">
+        <Calendar className="h-4 w-4 " />
         <span>{currentPost.date}</span>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 text-[#131A22]">
         <Clock className="h-4 w-4" />
         <span>{currentPost.readTime}</span>
       </div>
-      <span>by {currentPost.author}</span>
+      <span className="text-[#131A22]">by {currentPost.author}</span>
     </div>
   </div>
 </section>
@@ -97,7 +97,7 @@ const BlogPost = () => {
   <div className="container mx-auto px-4 md:px-6">
     <div className="max-w-3xl mx-auto">
       <div
-        className="prose max-w-none text-foreground text-[24px] leading-relaxed [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>p]:mb-4 [&>ul]:mb-4 [&>li]:mb-2"
+        className="prose max-w-none text-black text-[24px] leading-relaxed [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4 [&>p]:mb-4 [&>ul]:mb-4 [&>li]:mb-2"
         dangerouslySetInnerHTML={{ __html: currentPost.content }}
       />
     </div>

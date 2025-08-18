@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const Header = () => {
+const HeaderHome = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -48,27 +48,27 @@ const Header = () => {
           <a
             onClick={() => handleNavClick("about")}
             className={`cursor-pointer text-lg transition-colors duration-300 ${
-              isScrolled ? "text-black hover:text-primary" : "text-white hover:text-black"
+              isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"
             }`}
           >
             About us
           </a>
           <a
             onClick={() => navigate("/services")}
-            className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-black"
+            className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"
               }`}
           >
             Services
           </a>
 
 
-          <a onClick={() => navigate("/people")} className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-black"}`}>
+          <a onClick={() => navigate("/people")} className={`cursor-pointer text-lg transition-colors duration-300 ${isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"}`}>
             People
           </a>
           <a
             onClick={() => navigate("/news")}
             className={`cursor-pointer text-lg transition-colors duration-300 ${
-              isScrolled ? "text-black hover:text-primary" : "text-white hover:text-black"
+              isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"
             }`}
           >
             In the Spotlight
@@ -76,7 +76,7 @@ const Header = () => {
           <a
             onClick={() => navigate("/blogs")}
             className={`cursor-pointer text-lg transition-colors duration-300 ${
-              isScrolled ? "text-black hover:text-primary" : "text-white hover:text-black"
+              isScrolled ? "text-black hover:text-primary" : "text-white hover:text-primary"
             }`}
           >
             Blog
@@ -164,4 +164,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderHome;

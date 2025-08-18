@@ -33,10 +33,10 @@ const HowWeHelp = () => {
   ];
 
   return (
-    <section className="py-20 bg-background grid-mob  md:grid-overlay">
+    <section className="py-20 bg-white grid-mob  md:grid-overlay-light">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             How We Help Your Business
           </h2>
          {/*
@@ -61,12 +61,12 @@ const HowWeHelp = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="p-8 border border-border rounded-lg hover:border-primary transition-colors duration-300 group">
+            <div key={index} className="p-8 border bg-white border-border rounded-lg hover:border-primary transition-colors duration-300 group">
               <div className="text-4xl mb-4">{benefit.icon}</div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+              <h3 className="text-xl md:text-2xl font-bold text-black mb-4 group-hover:text-primary transition-colors">
                 {benefit.title}
               </h3>
-              <p className=" text-lg text-white leading-relaxed">{benefit.description}</p>
+              <p className=" text-lg text-black leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>

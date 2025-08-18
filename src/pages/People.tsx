@@ -9,19 +9,19 @@ import { motion } from "framer-motion";
 const People = () => {
   const leadership = [
     {
-      name: "Tom Dunn",
-      position: "Founder, CEO",
-      location: "GLOBAL",
-      image: "https://images.ctfassets.net/8fjb1swihtib/aeeSXgl5w8uR2lr1fbgjv/a5fc08d3dd517ea99f7e19ab59458cee/TD.jpg?w=360",
+      name: "Ekta Paliwal",
+      position: "Founder",
+     
+      image: "/img/ekta.jpeg",
       hoverImages: [
         "https://images.ctfassets.net/8fjb1swihtib/5LjrD8BtWL4pabLvwS40Yx/4b9961edd90ab155af98312040be745e/TD1_.jpg?w=360",
         "https://images.ctfassets.net/8fjb1swihtib/270LWohJ5MjtLrM2iRUGXf/e4159e301069e9625a3c013fa48102cb/TD2_.jpg?w=360"
       ]
     },
     {
-      name: "Joann DeLanoy",
+      name: "Simran Nagpal ",
       position: "Managing Director",
-      location: "EMEA",
+      
       image: "https://images.ctfassets.net/8fjb1swihtib/5BgZne3x0JfBOvcJD8rqqr/cf05cedaef6245812366e306df0cb831/6.png?w=360",
       hoverImages: [
         "https://images.ctfassets.net/8fjb1swihtib/jhCKSITh6dgNBKuo4KpOP/5adb8bd1095b747829f17ddfc4fe51b1/79.jpg?w=360",
@@ -29,57 +29,57 @@ const People = () => {
       ]
     },
     {
-      name: "Susannah Bard",
+      name: "Romita Khurana Sahni",
       position: "Managing Director",
-      location: "US",
+      
       image: "https://images.ctfassets.net/8fjb1swihtib/3ZP61BgM7wV2IKzkaBfMEl/f264b4c126de78dab96280eda72a45ad/3.png?w=360",
       hoverImages: [
         "https://images.ctfassets.net/8fjb1swihtib/1GUbZLeaJqpXTQbZjVtJmE/b7d8d2e444b18c50a64145bd4070701f/57.jpg?w=360",
         "https://images.ctfassets.net/8fjb1swihtib/61xzQpeoGR21UGnP0vN3gC/e46cb329cddff1dd250a2ad8979a7b5f/58.jpg?w=360"
       ]
-    },
-    {
-      name: "Bhawika Chhabra",
-      position: "Managing Director",
-      location: "APAC",
-      image: "https://images.ctfassets.net/8fjb1swihtib/1fhMCZkZLI2ExT0lFRwa25/7e2f8cbcd8b79f0a318ff0ddcde23cab/5.png?w=360",
-      hoverImages: []
     }
   ];
 
   const teamMembers = [
     {
-      name: "Alex Chen",
-      position: "Creative Director",
-      location: "LONDON",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=360&h=400&fit=crop&crop=face"
+      name: "Nayani Bajpai",
+      position: "Account Manager",
+      
+      image: "/img/nayani.jpeg"
     },
     {
-      name: "Sarah Johnson",
-      position: "Strategy Director",
+      name: "Mukesh Singh Budhwar",
+      position: "Account Manager",
       location: "NEW YORK",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=360&h=400&fit=crop&crop=face"
+      image: "/img/mukesh.jpeg"
     },
     {
-      name: "Marcus Rodriguez",
-      position: "Senior Designer",
+      name: "Aditi Chaurasia",
+      position: "Senior Account Executive",
       location: "LOS ANGELES",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=360&h=400&fit=crop&crop=face"
+      image: "/img/aditi.jpeg"
     },
     {
-      name: "Emma Thompson",
+      name: "Soumyashree Mishra",
       position: "Account Manager",
       location: "SYDNEY",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=360&h=400&fit=crop&crop=face"
     },
     {
-      name: "David Kim",
-      position: "Developer",
+      name: "Simran Upadhayay",
+      position: "Account Executive",
       location: "SINGAPORE",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=360&h=400&fit=crop&crop=face"
+      image: "/img/simran.jpeg"
     },
     {
-      name: "Lisa Wang",
+      name: "Khushi Verma",
+      position: "Account Executive",
+      location: "HONG KONG",
+      image: "/img/khushi.jpeg"
+    }
+    ,
+    {
+      name: "Diksha Gautam",
       position: "Brand Strategist",
       location: "HONG KONG",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=360&h=400&fit=crop&crop=face"
@@ -92,7 +92,7 @@ const People = () => {
 
       <main>
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-background grid-overlay">
+        <section className="pt-32 pb-20 grid-overlay-light bg-[#EF4343]">
           <motion.div variants={fadeInUp}
             initial="hidden"
             animate="visible" className="container mx-auto px-6">
@@ -104,7 +104,7 @@ const People = () => {
               </motion.h1>
               <motion.p variants={fadeInUp}
                 initial="hidden"
-                animate="visible" className="text-xl md:text-2xl text-white max-w-2xl leading-relaxed">
+                animate="visible" className="text-xl md:text-2xl text-foreground max-w-2xl leading-relaxed">
                 Our teams are made up of industry leading talent with diverse backgrounds, servicing clients in key markets around the world.
               </motion.p>
             </div>
@@ -112,11 +112,11 @@ const People = () => {
         </section>
 
         {/* Leadership Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-foreground">Leadership</h2>
+            <h2 className="text-4xl font-bold mb-12 text-black">Leadership</h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {leadership.map((person, index) => (
                 <div key={index} className="group cursor-pointer">
                   <div className="relative overflow-hidden mb-6 aspect-[3/4]">
@@ -136,13 +136,11 @@ const People = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-black group-hover:text-primary transition-colors duration-300">
                       {person.name}
                     </h3>
-                    <p className="text-muted-foreground">{person.position}</p>
-                    <Badge variant="outline" className="text-xs">
-                      {person.location}
-                    </Badge>
+                    <p className="text-gray-600">{person.position}</p>
+                    
                   </div>
                 </div>
               ))}

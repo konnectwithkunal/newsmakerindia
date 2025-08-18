@@ -26,180 +26,124 @@ const Footer = () => {
     setShowCookieBanner(false);
   };
   return (
-    <footer className="bg-background grid-overlay">
+    <footer className="bg-white grid-overlay">
       {/* Cookie consent banner */}
-      {showCookieBanner && (
-        <div className="bg-white text-black py-4">
-          <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-            <p className="text-sm mb-4 md:mb-0">
-              Newsmaker Media Group serves cookies to analyse traffic to this site. Information about your use of our site is shared for that purpose.{" "}
-              <a href="#" className="underline hover:no-underline">
-                See details.
-              </a>
-            </p>
-            <div className="flex gap-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleRejectCookies}
-                className="bg-[#EF4343] text-white hover:bg-[#f96464] rounded-full"
-              >
-                No thanks
-              </Button>
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={handleAcceptCookies}
-                className="bg-[#EF4343] text-white hover:bg-[#f96464] rounded-full"
-              >
-                OK, got it
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Get in touch CTA */}
-      <section aria-label="Get in touch" className="bg-primary">
-        <div className="container mx-auto px-6 py-20 md:py-28 text-center">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-background mb-8">
-            Let us get your brand noticed
-          </h2>
-          <Button asChild className="bg-foreground text-background rounded-full px-6 py-6 text-lg md:text-xl font-semibold hover:bg-foreground/90">
-            <a href={`mailto:${email}`} aria-label="Get in touch via email">
-              <span className="inline-flex items-center gap-3">
-                Get in touch
-                <ArrowRight className="size-5" />
-              </span>
-            </a>
+     {showCookieBanner && (
+    <div className="bg-gray-100 text-black py-4">
+      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        <p className="text-sm mb-4 md:mb-0">
+          Newsmaker Media Group serves cookies to analyse traffic to this site.{" "}
+          <a href="#" className="underline hover:no-underline text-primary">
+            See details.
+          </a>
+        </p>
+        <div className="flex gap-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleRejectCookies}
+            className="bg-[#EF4343] text-white hover:bg-[#f96464] rounded-full"
+          >
+            No thanks
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={handleAcceptCookies}
+            className="bg-[#EF4343] text-white hover:bg-[#f96464] rounded-full"
+          >
+            OK, got it
           </Button>
         </div>
-      </section>
+      </div>
+    </div>
+  )}
 
-{/* Contact section */}
-      <section id="contact" aria-label="Contact information" className="bg-background grid-mob  md:grid-overlay">
-        <div className="container mx-auto px-6 py-16 md:py-24 text-center">
-          <a
-            href={`mailto:${email}`}
-            className="inline-block text-2xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground"
-          >
-            {email}
-          </a>
-          <div className="mx-auto mt-3 h-1 w-40 bg-primary" />
-          <p className="mt-6 text-lg text-muted-foreground">
-            Or call us at
-            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} className="ml-2 text-foreground hover:text-primary transition-colors">
-              {phone}
-            </a>
+  {/* Get in touch CTA */}
+  <section aria-label="Get in touch" className="bg-primary grid-overlay-light">
+    <div className="container mx-auto px-6 py-20 md:py-28 text-center">
+      <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white mb-8">
+        Let us get your brand noticed
+      </h2>
+      <Button asChild className="bg-black text-white rounded-full px-6 py-6 text-lg md:text-xl font-semibold hover:bg-black/80">
+        <a href={`mailto:${email}`} aria-label="Get in touch via email">
+          <span className="inline-flex items-center gap-3">
+            Get in touch
+            <ArrowRight className="size-5" />
+          </span>
+        </a>
+      </Button>
+    </div>
+  </section>
+
+  {/* Contact section */}
+  <section id="contact" aria-label="Contact information" className="bg-white">
+    <div className="container mx-auto px-6 py-16 md:py-24 text-center ">
+      <a
+        href={`mailto:${email}`}
+        className="inline-block text-2xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black"
+      >
+        {email}
+      </a>
+      <div className="mx-auto mt-3 h-1 w-40 bg-primary" />
+      <p className="mt-6 text-lg text-gray-600">
+        Or call us at
+        <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} className="ml-2 text-black hover:text-primary transition-colors">
+          {phone}
+        </a>
+      </p>
+    </div>
+  </section>
+
+  {/* Main footer content */}
+  <section aria-label="Footer navigation" className="bg-white">
+    <div className="container mx-auto px-6 py-12 md:py-16">
+      <div className="grid md:grid-cols-4 gap-12">
+        <div className="md:col-span-2">
+          <img src="/img/colorblack.png" alt="Newsmakermedia Logo" className="h-14 mb-6" />
+          <p className="text-gray-700 mb-8 max-w-md text-xl leading-relaxed">
+           Newsmaker Media Group is a full-service communications consultancy built for the evolving media landscape. Founded with a vision to bring authenticity and agility into the PR and marketing ecosystem, we help brands tell stories that resonate, engage, and influence.
           </p>
-        </div>
-      </section>
-
-       {/* Main footer content */}
-      <section aria-label="Footer navigation" className="bg-background">
-        <div className="container mx-auto px-6 py-12 md:py-16">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div className="md:col-span-2">
-             <img
-              src="/img/colorwhite.png"
-              alt="Newsmakermedia Logo"
-              className="h-14 mb-6"
-            />
-              <p className="text-white mb-8 max-w-md text-xl leading-relaxed">
-                    Newsmaker Media Group is a full-service communications consultancy built for the evolving media landscape. Founded with a vision to bring authenticity and agility into the PR and marketing ecosystem, we help brands tell stories that resonate, engage, and influence.
-              </p>
-              <div className="flex space-x-6">
-                <a href="#" className="text-white hover:text-primary transition-colors text-xl" aria-label="LinkedIn">
-                  LinkedIn
-                </a>
-                <a href="#" className="text-white hover:text-primary transition-colors text-xl" aria-label="Twitter">
-                  Twitter
-                </a>
-                <a href="#" className="text-white hover:text-primary transition-colors text-xl" aria-label="Instagram">
-                  Instagram
-                </a>
-              </div>
-            </div>
-
-            <nav aria-label="Services">
-              <h4 className="font-semibold mb-6 text-foreground text-2xl">Services</h4>
-              <ul className="space-y-3">
-                <li>
-      <Link
-        to="/services?service=media-relations"
-        className="text-white text-xl hover:text-foreground transition-colors"
-      >
-        Media Relations
-      </Link>
-    </li>
-    <li>
-      <Link
-        to="/services?service=event-management"
-        className="text-white text-xl hover:text-foreground transition-colors"
-      >
-        Event Management
-      </Link>
-    </li>
-    <li>
-      <Link
-        to="/services?service=crisis-management"
-        className="text-white text-xl hover:text-foreground transition-colors"
-      >
-        Crisis Management
-      </Link>
-    </li>
-    <li>
-      <Link
-        to="/services?service=content-creation"
-        className="text-white text-xl hover:text-foreground transition-colors"
-      >
-        Content Creation
-      </Link>
-    </li>
-              </ul>
-            </nav>
-
-            <nav aria-label="Company">
-              <h4 className="font-semibold mb-6 text-foreground text-2xl">Company</h4>
-              <ul className="space-y-3">
-                <li>
-      <Link to="/" className="text-white text-xl hover:text-foreground transition-colors">
-        About us
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="text-white text-xl hover:text-foreground transition-colors">
-        Services
-      </Link>
-    </li>
-    <li>
-      <Link to="/people" className="text-white text-xl hover:text-foreground transition-colors">
-        People
-      </Link>
-    </li>
-    <li>
-      <Link to="/news" className="text-white text-xl hover:text-foreground transition-colors">
-        In the Spotlight
-      </Link>
-    </li>
-    <li>
-      <Link to="/blogs" className="text-white text-xl hover:text-foreground transition-colors">
-        Blog
-      </Link>
-    </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div className="border-t border-border mt-16 pt-8 flex flex-col md:flex-row items-center justify-between">
-            <p className="text-white">© 2025 Newsmaker Media Group. All rights reserved.</p>
-            <div className="flex space-x-8 mt-4 md:mt-0">
-              <a href="#" className="text-white hover:text-foreground transition-colors">Privacy Policy</a>
-              <a href="#" className="text-white hover:text-foreground transition-colors">Terms of Service</a>
-            </div>
+          <div className="flex space-x-6">
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors text-xl" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors text-xl" aria-label="Twitter">Twitter</a>
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors text-xl" aria-label="Instagram">Instagram</a>
           </div>
         </div>
-      </section>
+
+        {/* Services */}
+        <nav aria-label="Services">
+          <h4 className="font-semibold mb-6 text-black text-2xl">Services</h4>
+          <ul className="space-y-3">
+            <li><Link to="/services?service=media-relations" className="text-gray-700 text-xl hover:text-primary">Media Relations</Link></li>
+            <li><Link to="/services?service=event-management" className="text-gray-700 text-xl hover:text-primary">Event Management</Link></li>
+            <li><Link to="/services?service=crisis-management" className="text-gray-700 text-xl hover:text-primary">Crisis Management</Link></li>
+            <li><Link to="/services?service=content-creation" className="text-gray-700 text-xl hover:text-primary">Content Creation</Link></li>
+          </ul>
+        </nav>
+
+        {/* Company */}
+        <nav aria-label="Company">
+          <h4 className="font-semibold mb-6 text-black text-2xl">Company</h4>
+          <ul className="space-y-3">
+            <li><Link to="/" className="text-gray-700 text-xl hover:text-primary">About us</Link></li>
+            <li><Link to="/services" className="text-gray-700 text-xl hover:text-primary">Services</Link></li>
+            <li><Link to="/people" className="text-gray-700 text-xl hover:text-primary">People</Link></li>
+            <li><Link to="/news" className="text-gray-700 text-xl hover:text-primary">In the Spotlight</Link></li>
+            <li><Link to="/blogs" className="text-gray-700 text-xl hover:text-primary">Blog</Link></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div className="border-t border-gray-300 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between">
+        <p className="text-gray-600">© 2025 Newsmaker Media Group. All rights reserved.</p>
+        <div className="flex space-x-8 mt-4 md:mt-0">
+          <a href="#" className="text-gray-600 hover:text-primary">Privacy Policy</a>
+          <a href="#" className="text-gray-600 hover:text-primary">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
       {/* Structured data for SEO */}
       <script type="application/ld+json" suppressHydrationWarning>

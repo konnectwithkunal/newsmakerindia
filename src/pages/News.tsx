@@ -15,7 +15,7 @@ const News = () => {
 
             <main>
                 {/* Hero Section */}
-                <section className="pt-32 pb-20 bg-background grid-overlay">
+                <section className="pt-32 pb-20 bg-[#EF4343] grid-overlay-light">
                     <motion.div variants={fadeInUp} initial="hidden"
                         animate="visible" className="container mx-auto px-6">
                         <div className="max-w-4xl">
@@ -24,7 +24,7 @@ const News = () => {
                                 In the Spotlight
                             </motion.h1>
                             <motion.p variants={fadeInUp} initial="hidden"
-                                animate="visible" className="text-xl md:text-2xl text-white max-w-2xl leading-relaxed">
+                                animate="visible" className="text-xl md:text-2xl text-foreground max-w-2xl leading-relaxed">
                                 Stay updated with our latest projects, industry insights, awards, and company developments.
                             </motion.p>
                         </div>
@@ -32,7 +32,7 @@ const News = () => {
                 </section>
 
                 {/* News Grid */}
-                <section className="py-12 bg-background">
+                <section className="py-12 bg-white">
                     <div className="container mx-auto px-6">
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {newsItems.map((item, index) => (
@@ -54,8 +54,8 @@ const News = () => {
                                         </div>
 
                                         <div className="space-y-3">
-                                            <div className="text-sm text-muted-foreground">{item.date}</div>
-                                            <h3 className="text-xl font-bold leading-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                                            <div className="text-sm text-black">{item.date}</div>
+                                            <h3 className="text-xl font-bold leading-tight text-black group-hover:text-primary transition-colors duration-300">
                                                 {item.title}
                                             </h3>
                                             <div className="flex flex-wrap gap-2">

@@ -25,16 +25,16 @@ const News = () => {
 
 
   return (
-    <section id="news" className="py-20 bg-background grid-mob  md:grid-overlay">
+    <section id="news" className="py-20 bg-white grid-mob-light  md:grid-overlay-light">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-16">
           <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">In the Spotlight</h2>
-            <p className="text-lg md:text-2xl text-white leading-relaxed">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4 text-black">In the Spotlight</h2>
+            <p className="text-lg md:text-2xl text-black leading-relaxed">
               Stay updated with our latest insights, awards, and company developments.
             </p>
           </div>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-black">
             {currentPage + 1}/{totalPages}
           </div>
         </div>
@@ -66,8 +66,8 @@ const News = () => {
                     <div className="absolute inset-0 border border-border group-hover:border-primary transition-colors duration-300"></div>
                   </div>
                   <div className="space-y-3">
-                    <div className="text-sm text-muted-foreground">{item.date}</div>
-                    <h3 className="text-xl md:text-2xl leading-tight text-white group-hover:text-primary transition-colors duration-300">
+                    <div className="text-sm text-black">{item.date}</div>
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight text-black group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -90,7 +90,7 @@ const News = () => {
             size="sm"
             onClick={handlePrev}
             disabled={currentPage === 0}
-            className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full"
+            className="border-foreground text-foreground hover:bg-primary hover:text-background rounded-full"
           >
             Previous
           </Button>
@@ -99,7 +99,7 @@ const News = () => {
             size="sm"
             onClick={handleNext}
             disabled={currentPage === totalPages - 1}
-            className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full"
+            className="border-foreground text-foreground hover:bg-primary hover:text-background rounded-full"
           >
             Next
           </Button>

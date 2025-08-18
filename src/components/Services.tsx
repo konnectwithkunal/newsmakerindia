@@ -98,7 +98,7 @@ const Services = () => {
 
 
   return (
-    <section id="services" className="py-20" style={{backgroundColor: '#040214'}}>
+    <section id="services" className="py-20 bg-[#EF4343]" >
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">Services</h2>
@@ -124,13 +124,13 @@ const Services = () => {
                 >
                   <div className="flex items-center justify-between">
                     <h3 className={`text-2xl md:text-3xl font-bold transition-all duration-300 ${
-                      selectedService === index ? 'text-primary translate-x-2' : 'text-foreground group-hover:text-primary group-hover:translate-x-2'
+                      selectedService === index ? 'text-[ffffff] translate-x-2' : 'text-foreground group-hover:text-[primary] group-hover:translate-x-2'
                     }`}>
                       {service.title}
                     </h3>
                     <svg 
                       className={`w-8 h-8 transition-all duration-300 ${
-                        selectedService === index ? 'text-primary translate-x-2' : 'text-muted-foreground group-hover:text-primary group-hover:translate-x-2'
+                        selectedService === index ? ' translate-x-2' : 'text-muted-foreground group-hover:text-primary group-hover:translate-x-2'
                       }`}
                       fill="none" 
                       stroke="currentColor" 
@@ -148,7 +148,7 @@ const Services = () => {
           <div className="space-y-6 hidden md:block">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {services[selectedService].subServices.map((subService, index) => (
-                <div key={index} className="border-2 border-white p-4 hover:border-primary/30 transition-all duration-300" style={{backgroundColor: '#040214'}}>
+                <div key={index} className="border-2 border-white p-4 hover:border-[000000] transition-all duration-300 bg-[#EF4343]">
                   <h4 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wide">
                     {subService.title}
                   </h4>

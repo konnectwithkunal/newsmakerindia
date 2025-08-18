@@ -88,7 +88,7 @@ const Contact = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-background grid-overlay">
+      <section className="pt-32 pb-20 bg-[#EF4343] grid-overlay-light">
         <motion.div variants={fadeInUp}
           initial="hidden"
           animate="visible" className="container mx-auto px-6">
@@ -96,7 +96,7 @@ const Contact = () => {
             <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
               Work with us
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-xl text-foreground max-w-2xl leading-relaxed">
               From the smallest crafted creative to a moonshot idea, we have what it takes to make your project come to life.
             </motion.p>
           </div>
@@ -104,12 +104,12 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-foreground">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-16">
             {/* Form */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold mb-8 text-foreground">Let's get started</h2>
+              <h2 className="text-3xl font-bold mb-8 text-black">Let's get started</h2>
 
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -119,7 +119,7 @@ const Contact = () => {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">First name *</FormLabel>
+                          <FormLabel className="text-black">First name *</FormLabel>
                           <FormControl>
                             <Input placeholder="First name" className="h-12" {...field} />
                           </FormControl>
@@ -133,7 +133,7 @@ const Contact = () => {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">Last name *</FormLabel>
+                          <FormLabel className="text-black">Last name *</FormLabel>
                           <FormControl>
                             <Input placeholder="Last name" className="h-12" {...field} />
                           </FormControl>
@@ -148,7 +148,7 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">Email *</FormLabel>
+                          <FormLabel className="text-black">Email *</FormLabel>
                           <FormControl>
                             <Input type="email" placeholder="Email" className="h-12" {...field} />
                           </FormControl>
@@ -161,7 +161,7 @@ const Contact = () => {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">Phone *</FormLabel>
+                          <FormLabel className="text-black">Phone *</FormLabel>
                           <FormControl>
                             <Input type="tel" placeholder="Phone number" className="h-12" {...field} />
                           </FormControl>
@@ -178,7 +178,7 @@ const Contact = () => {
                       name="jobTitle"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">Job Title</FormLabel>
+                          <FormLabel className="text-black">Job Title</FormLabel>
                           <FormControl>
                             <Input placeholder="Job Title" className="h-12" {...field} />
                           </FormControl>
@@ -192,7 +192,7 @@ const Contact = () => {
                       name="company"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-foreground">Company</FormLabel>
+                          <FormLabel className="text-black">Company</FormLabel>
                           <FormControl>
                             <Input placeholder="Company" className="h-12" {...field} />
                           </FormControl>
@@ -207,11 +207,11 @@ const Contact = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-foreground">Message *</FormLabel>
+                        <FormLabel className="text-black">Message *</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="Tell us about your project..."
-                            className="min-h-[120px]"
+                            className="min-h-[120px] text-gray-500"
                             {...field}
                           />
                         </FormControl>
@@ -234,7 +234,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Contact Number</h3>
+                <h3 className="text-xl font-semibold mb-4 text-black">Contact Number</h3>
                 <a
                   href="callto:9819416689"
                   className="text-primary hover:text-primary/80 transition-colors text-lg"
@@ -244,7 +244,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">General enquiries</h3>
+                <h3 className="text-xl font-semibold mb-4 text-black">General enquiries</h3>
                 <a
                   href="mailto:Team@newsmakermediagroup.com"
                   className="text-primary hover:text-primary/80 transition-colors text-lg"

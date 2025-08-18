@@ -14,11 +14,11 @@ const Blogs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen ">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-background grid-overlay">
+        <section className="pt-32 pb-20 bg-[#EF4343] grid-overlay-light">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
@@ -29,7 +29,7 @@ const Blogs = () => {
               <h1 className="text-6xl md:text-8xl font-bold mb-8 text-foreground">
                 Blog
               </h1>
-              <p className="text-xl md:text-2xl text-white max-w-2xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-foreground max-w-2xl leading-relaxed">
                 Insights, strategies, and perspectives from our team on the latest trends in creative marketing and product design.
               </p>
             </div>
@@ -37,7 +37,7 @@ const Blogs = () => {
         </section>
 
         {/* Blog Grid */}
-        <section className="py-12 bg-background">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
@@ -60,14 +60,14 @@ const Blogs = () => {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
+                    <div className="flex items-center justify-between text-sm text-black">
                       <span>{post.date}</span>
                       <span>{post.readTime}</span>
                     </div>
-                    <h3 className="text-xl font-bold leading-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-bold leading-tight text-black group-hover:text-primary transition-colors duration-300">
                       {post.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-black text-sm leading-relaxed">
                       {post.excerpt}
                     </p>
                     <div className="flex flex-wrap gap-2">
