@@ -24,12 +24,23 @@ const Clients = () => {
     { name: "Prime Video", logo: "/icons/nation.png" },
     { name: "Swiggy", logo: "/icons/plutos.png" },
     { name: "Robinhood", logo: "/icons/smfg.png" },
+    { name: "Snapchat", logo: "/icons/star.png" },
+    { name: "TAC", logo: "/icons/fortis.jpeg" },
+    { name: "Fortis Hospital", logo: "/icons/secure.jpeg" },
+    { name: "Secure Claw", logo: "/icons/petals.jpeg" },
+    { name: "Petals", logo: "/icons/arista.jpeg" },
+    { name: "AFAI", logo: "/icons/afai.jpeg" },
+    { name: "Spay India", logo: "/icons/spay.jpeg" },
+    { name: "Talent Corner", logo: "/icons/talent.jpeg" },
+    { name: "Eye 7", logo: "/icons/eye7.jpeg" },
+    { name: "Sanskrit", logo: "/icons/sans.jpeg" },
+    { name: "Resurgent India", logo: "/icons/resurgent.jpeg" },
   ];
 
   // split logos into 3 rows
-  const row1 = clients.slice(0, 8);
-  const row2 = clients.slice(8, 16);
-  const row3 = clients.slice(16, 24);
+  const row1 = clients.slice(0, 12);
+  const row2 = clients.slice(12, 24);
+  const row3 = clients.slice(24, 35);
 
   return (
     <section id="people" className="py-20 bg-[#fff] overflow-hidden">
@@ -102,7 +113,7 @@ const Clients = () => {
           animation: scroll-left 10s linear infinite;
         }
         .animate-scroll-fast-reverse {
-          animation: scroll-right 10s linear infinite;
+          animation: scroll-right 30s linear infinite;
         }
 
         @keyframes scroll-left {

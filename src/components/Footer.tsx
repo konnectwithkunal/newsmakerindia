@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(false);
-  const email = "Newsmakerdesk@gmail.com";
+  const email = "Team@newsmakermediagroup.com";
   const phone = "+91 9819416689";
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const Footer = () => {
     <div className="container mx-auto px-6 py-16 md:py-24 text-center ">
       <a
         href={`mailto:${email}`}
-        className="inline-block text-2xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black"
+        className="inline-block text-xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black"
       >
         {email}
       </a>

@@ -48,14 +48,14 @@ function About() {
         </motion.div>
 
         <motion.div
-          className=" section-description bg-white w-full mt-[-50px]  flex flex-col gap-5 font-normal text-[1.1rem] text-[#222] bg-transparent"
+          className=" section-description bg-white w-[700px] ml-[450px] mt-[-50px]  flex flex-col gap-5 font-normal text-[1.1rem] text-[#222] bg-transparent"
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className=" bg-transparent flex items-start text-2xl text-[#000] ">
             <span>
-              Newsmaker Media and Communications is a full-service communications consultancy built for the evolving media landscape.Founded with a vision to bring authenticity and agility into the PR and marketing ecosystem, we help brands tell stories that resonate, engage, and influence.
+              Newsmaker Media group is a full-service communications consultancy built for the evolving media landscape.Founded with a vision to bring authenticity and agility into the PR and marketing ecosystem, we help brands tell stories that resonate, engage, and influence.
             </span>
           </p>
 

@@ -132,7 +132,7 @@
 .arrow {
   width: 7em;
   height: 4em;
-  margin-left: -120px;
+  margin-left: 320px;
   animation: left-right 2s infinite;
   display: block;
   color: black;

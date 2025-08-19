@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -43,9 +44,16 @@ const Testimonials = () => {
     if (!api) return;
     const id = setInterval(() => {
       if (!pausedRef.current) api.scrollNext();
-    }, 6000);
+    }, 5000);
     return () => clearInterval(id);
   }, [api]);
+
+  const handleMouseEnter = () => {
+    pausedRef.current = true;
+  };
+  const handleMouseLeave = () => {
+    pausedRef.current = false;
+  };
 
   return (
     <section className="py-24 bg-white">
@@ -68,45 +76,45 @@ const Testimonials = () => {
             loop: true,
           }}
           setApi={setApi}
-          className="w-full max-w-6xl mx-auto"
-          onMouseEnter={() => (pausedRef.current = true)}
-          onMouseLeave={() => (pausedRef.current = false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="w-full max-w-5xl mx-auto"
         >
           <CarouselContent>
-            {testimonials.map((t, i) => (
-              <CarouselItem key={i} className="basis-full">
-                <div className="grid md:grid-cols-5 rounded-2xl overflow-hidden shadow-md border border-gray-200">
-                  {/* Left Side - Person Image Only (40%) */}
-                  <div
-                    className="md:col-span-2 relative h-80 md:h-auto"
-                    style={{
-                      backgroundImage: `url(${t.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    {/* Subtle dark overlay for contrast */}
-                    <div className="absolute inset-0 bg-black/20" />
-                  </div>
-
-                  {/* Right Side - Testimonial (60%) */}
-                  <div className="md:col-span-3 flex flex-col justify-center p-10 md:p-16 bg-white text-gray-800">
-                    <div className="text-6xl md:text-7xl text-primary/30 font-black mb-4 leading-none">
-                      "
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="basis-full">
+                <Card className="bg-white border border-gray-200 shadow-xl rounded-2xl h-full">
+                  <CardContent className="p-10 flex flex-col md:flex-row items-center gap-10 h-full">
+                    {/* Profile Section - Left Side */}
+                    <div className="flex flex-col items-center text-center md:w-1/3">
+                      <div className="w-40 h-40 md:w-52 md:h-52 rounded-xl overflow-hidden shadow-2xl border-4 border-primary/40 transform hover:scale-105 transition-transform duration-500">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="mt-6 bg-primary/5 px-4 py-3 rounded-xl shadow-sm">
+                        <h4 className="font-bold text-black text-xl md:text-2xl">
+                          {testimonial.author}
+                        </h4>
+                        <p className="text-primary font-medium text-base md:text-lg">
+                          {testimonial.position}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-xl md:text-2xl leading-relaxed italic">
-                      {t.quote}
-                    </p>
-                    <div className="mt-8">
-                      <h4 className="font-bold text-2xl text-black">
-                        {t.author}
-                      </h4>
-                      <p className="text-primary font-medium text-lg">
-                        {t.position}
+
+                    {/* Quote Section - Right Side */}
+                    <div className="flex-1 md:w-2/3 text-center md:text-left">
+                      <div className="text-6xl md:text-7xl text-primary/30 font-black mb-4 leading-none">
+                        "
+                      </div>
+                      <p className="text-xl md:text-2xl leading-relaxed text-gray-800 italic">
+                        {testimonial.quote}
                       </p>
                     </div>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
