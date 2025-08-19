@@ -13,7 +13,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote:
-        "Working with Newsmaker Media and Communications over the past one and a half years has been an incredibly positive experience. They truly understand the essence of the Marching Sheep brand and have consistently ensured that our voice and message are communicated with clarity and integrity.",
+        "Working with Newsmaker Media Group over the past one and a half years has been an incredibly positive experience. They truly understand the essence of the Marching Sheep brand and have consistently ensured that our voice and message are communicated with clarity and integrity.",
       author: "Sonica Aron",
       position: "Founder & Managing Partner, Marching Sheep",
       image:
@@ -21,7 +21,7 @@ const Testimonials = () => {
     },
     {
       quote:
-        "Its been nearly four years I have been associated with Newsmaker Media and Communication. The journey has been tumultuous and so rewarding. Ankit and his team are my go-to guys when I have any issues regarding media whether it is print, digital or screen.",
+        "Its been nearly four years I have been associated with Newsmaker Media Group. The journey has been tumultuous and so rewarding. Ankit and his team are my go-to guys when I have any issues regarding media whether it is print, digital or screen.",
       author: "Dr. Ridhima Khamesra",
       position: "Dietician",
       image:
@@ -29,12 +29,38 @@ const Testimonials = () => {
     },
     {
       quote:
-        "Newsmaker Media and Communications has been a valuable partner in amplifying IATO's voice across the industry. Their professionalism, creativity, and deep understanding of the tourism sector have consistently delivered impactful results. We truly appreciate their dedication and look forward to continued collaboration",
+        "Newsmaker Media Group has been a valuable partner in amplifying IATO's voice across the industry. Their professionalism, creativity, and deep understanding of the tourism sector have consistently delivered impactful results. We truly appreciate their dedication and look forward to continued collaboration",
       author: "Ravi Gosain",
       position: "President, IATO",
       image:
         "/lovable-uploads/22ae4ec2-13b6-4e38-8321-7adb9d755bcf.png",
     },
+    {
+      quote:
+        "Newsmaker Media Group has been a trusted partner for SMFG Credit India. Their expertise in media relations and storytelling has helped us build a strong brand presence. Professional, responsive, and results-driven - we've seen tangible benefits from their work. Highly recommended for any organization looking to elevate their media footprint.",
+      author: "Mr. Kumar Gaurav",
+      position: "Chief Marketing Officer, SMFG India Credit Pvt. Ltd",
+      image:
+        "/lovable-uploads/kumar.jpeg",
+    },
+    
+    {
+      quote:
+        "Working with Newsmaker Media Group has been smooth, impactful, and genuinely enriching. They have an incredible talent for capturing and conveying our brand’s vision with precision and meaning. Positive attitude and strategic media planning with commitment to excellence have made them a trusted ally in our roadmap. It's nice to work with a team that really gets our objectives and keeps producing great work.",
+      author: "Mr. Rohit Mahajan",
+      position: "Founder and Managing Partner, plutosONE",
+      image:
+        "/lovable-uploads/rohit.jpeg",
+    },
+    {
+      quote:
+        "Newsmaker Media Group has been instrumental in amplifying Corover.ai's presence in the media landscape. Their expertise in crafting compelling narratives and securing coverage in top-tier publications has been invaluable. Their team's dedication and passion for delivering results-driven PR solutions have truly impressed me. I highly recommend Newsmaker Media Group to any organization looking to elevate their brand story.",
+      author: "Mr. Ankush Sabharwal",
+      position: "Founder, CoRover.ai and BharatGPT",
+      image:
+        "/lovable-uploads/ankush.jpeg",
+    },
+   
   ];
 
   const [api, setApi] = useState<CarouselApi | null>(null);

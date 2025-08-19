@@ -55,7 +55,7 @@ function About() {
         >
           <p className=" bg-transparent flex items-start text-2xl text-[#000] ">
             <span>
-              Newsmaker Media group is a full-service communications consultancy built for the evolving media landscape.Founded with a vision to bring authenticity and agility into the PR and marketing ecosystem, we help brands tell stories that resonate, engage, and influence.
+              Newsmaker Media Group is a full-service communications consultancy built for the evolving media landscape.Founded with a vision to bring authenticity and agility into the PR and marketing ecosystem, we help brands tell stories that resonate, engage, and influence.
             </span>
           </p>
 
