@@ -230,14 +230,14 @@ const News = () => {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block min-w-[450px] max-w-[450px] flex-shrink-0"
+                  className="group block min-w-[250px] max-w-[250px] md:min-w-[450px] md:max-w-[450px] flex-shrink-0"
                 >
                   <article className="cursor-pointer">
                     <div className="relative overflow-hidden mb-4 ">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-48 md:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 border border-border group-hover:border-primary transition-colors duration-300 "></div>
                     </div>
