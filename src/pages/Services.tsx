@@ -30,99 +30,99 @@ const Services = () => {
   };
 
   const services = [
-    {
-      title: "Media Relations",
-      slug: "media-relations",
-      description: "In today's fast-paced media landscape, securing coverage for your brand can be a game-changer. At Newsmaker Media Group our expert media relations services are designed to amplify your brand's voice and elevate its visibility.",
-      subServices: [
-        {
-          title: "Media Outreach",
-          description: "Building relationships with media outlets and pitching stories."
-        },
-        {
-          title: "Press Release Distribution",
-          description: "Distributing press releases to targeted media outlets."
-        },
-        {
-          title: "Story Pitching",
-          description: "Pitching stories and ideas to media outlets."
-        },
-        {
-          title: "Media Training",
-          description: "Providing media training for clients."
-        }
-      ]
-    },
-    {
-      title: "Event Management",
-      slug: "event-management",
-      description: "Event management services at Newsmaker Media Group, we specialize in creating unforgettable events that exceed your expectations. Our expert event management services cover every aspect of event planning, from concept to execution.",
-      subServices: [
-        {
-          title: "Event Conceptualization",
-          description: "Developing event concepts and themes."
-        },
-        {
-          title: "Event Marketing",
-          description: "Promoting events through various marketing channels."
-        },
-        {
-          title: "Venue Management",
-          description: "Selecting and managing event venues."
-        },
-        {
-          title: "Logistics Management",
-          description: "Managing event logistics, including catering, audio-visual, and more."
-        }
-      ]
-    },
-    {
-      title: "Crisis Management",
-      slug: "crisis-management",
-      description: "In today's fast-paced and unpredictable business environment, crises can strike at any moment, threatening your organization's reputation and operations. At Newsmaker Media and Communications, we understand the importance of effective crisis management.",
-      subServices: [
-        {
-          title: "Online Reputation Management",
-          description: "Managing online reputation during crises, including search engine optimization and content creation."
-        },
-        {
-          title: "Crisis Communications Planning",
-          description: "Developing crisis communications plans and strategies."
-        },
-        {
-          title: "Social Media Crisis Management",
-          description: "Managing social media during crises, including monitoring, response, and mitigation."
-        }
-      ]
-    },
-    {
-      title: "Content Creation",
-      slug: "content-creation",
-      description: "At Newsmaker Media Group, we specialize in creating high-quality content that engages, informs, and inspires audiences. Our expert content creation services cover every aspect of content development, from strategy to execution.",
-      subServices: [
-        {
-          title: "Article Writing",
-          description: "Writing high-quality articles for websites, blogs, and more."
-        },
-        {
-          title: "Blog Writing",
-          description: "Creating engaging blog content for various industries."
-        },
-        {
-          title: "Content Strategy",
-          description: "Developing content strategies for businesses."
-        },
-        {
-          title: "SEO Content",
-          description: "Creating SEO-optimized content for websites."
-        },
-        {
-          title: "Content Marketing",
-          description: "Developing content marketing strategies for businesses."
-        }
-      ]
-    }
-  ];
+  {
+    title: "Media Relations",
+    slug: "media-relations",
+    description: "In today's fast-paced media landscape, securing coverage for your brand can be a game-changer. At Newsmaker Media Group our expert media relations services are designed to amplify your brand's voice and elevate its visibility.",
+    subServices: [
+      {
+        title: "Media Outreach",
+        description: "Building relationships with media outlets and pitching stories."
+      },
+      {
+        title: "Press Release Distribution",
+        description: "Distributing press releases to targeted media outlets."
+      },
+      {
+        title: "Story Pitching",
+        description: "Pitching stories and ideas to media outlets."
+      },
+      {
+        title: "Media Training",
+        description: "Providing media training for clients."
+      }
+    ]
+  },
+  {
+    title: "Event Management",
+    slug: "event-management",
+    description: "At Newsmaker Media Group, we specialize in delivering exceptional event management services that create lasting impressions and go beyond expectations. From concept to flawless execution, our team ensures every detail is meticulously planned and executed.",
+    subServices: [
+      {
+        title: "Event Conceptualization",
+        description: "Designing impactful event concepts and themes tailored to your objectives."
+      },
+      {
+        title: "Event Marketing",
+        description: "Driving attendance and engagement through strategic, multi-channel marketing campaigns."
+      },
+      {
+        title: "Venue Management",
+        description: "Identifying, securing, and managing venues to align with your event vision."
+      },
+      {
+        title: "Logistics Management",
+        description: "Overseeing end-to-end logistics, including catering, audio-visuals, and on-site coordination for a seamless experience."
+      }
+    ]
+  },
+  {
+    title: "Crisis Management",
+    slug: "crisis-management",
+    description: "In today’s fast-paced and unpredictable business environment, crises can emerge without warning, putting your organization’s reputation and operations at risk. At Newsmaker Media and Communications, we specialize in proactive and strategic crisis management to safeguard your brand and ensure business continuity.",
+    subServices: [
+      {
+        title: "Online Reputation Management",
+        description: "Protecting and restoring your digital presence through targeted reputation strategies, SEO, and tailored content creation."
+      },
+      {
+        title: "Crisis Communications Planning",
+        description: "Designing comprehensive crisis communication frameworks and response strategies to prepare your organization for the unexpected."
+      },
+      {
+        title: "Social Media Crisis Management",
+        description: "Monitoring, managing, and mitigating risks across social platforms with timely responses and strategic interventions."
+      }
+    ]
+  },
+  {
+    title: "Content Creation",
+    slug: "content-creation",
+    description: "At Newsmaker Media Group, we craft impactful content that engages, informs, and inspires your target audience. Our end-to-end content creation services—spanning strategy, development, and execution—are designed to elevate your brand presence and drive meaningful results.",
+    subServices: [
+      {
+        title: "Article Writing",
+        description: "Producing well-researched, high-quality articles tailored for websites, publications, and digital platforms."
+      },
+      {
+        title: "Blog Writing",
+        description: "Delivering engaging and industry-relevant blog content that builds authority and sparks conversations."
+      },
+      {
+        title: "Content Strategy",
+        description: "Designing customized content strategies that align with your business goals and audience needs."
+      },
+      {
+        title: "SEO Content",
+        description: "Creating optimized content that enhances search visibility and drives organic traffic."
+      },
+      {
+        title: "Content Marketing",
+        description: "Developing and executing comprehensive content marketing campaigns to amplify reach and impact."
+      }
+    ]
+  }
+];
 
   return (
     <div className="min-h-screen bg-background">
