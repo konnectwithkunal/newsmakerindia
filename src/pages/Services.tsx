@@ -129,7 +129,7 @@ const Services = () => {
       <Header />
       
       {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-[#040214] grid-overlay">
+        <section className="pt-32 pb-20 bg-[#EF4343] grid-overlay-light">
           <motion.div variants={fadeInUp}
             initial="hidden"
             animate="visible" className="container mx-auto px-6">
@@ -149,11 +149,11 @@ const Services = () => {
         </section>
 
       {/* Service Types Section */}
-      <section className="py-20" style={{backgroundColor: '#040214'}}>
+      <section className="py-20 bg-white" >
         <div className="container mx-auto px-6">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Service types</h2>
-            <div className="border-t-2 border-white"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">Service types</h2>
+            <div className="border-t-2 border-black"></div>
           </div>
           
           <div className="space-y-0">
@@ -161,15 +161,15 @@ const Services = () => {
               const isOpen = openServices[index];
               return (
                 <Collapsible key={index} open={isOpen} onOpenChange={() => toggleService(index)}>
-                  <div className="border-b-2 border-white">
+                  <div className="border-b-2 border-black">
                     <CollapsibleTrigger className="group cursor-pointer p-6 transition-all duration-300 w-full text-left hover:translate-x-2">
                       <div className="flex items-center justify-between">
                         <h3 className={`text-2xl md:text-3xl font-bold transition-all duration-300 ${
-                          isOpen ? 'text-primary translate-x-2' : 'text-foreground group-hover:text-primary group-hover:translate-x-2'
+                          isOpen ? 'text-primary translate-x-2' : 'text-black group-hover:text-primary group-hover:translate-x-2'
                         }`}>
                           {service.title}
                         </h3>
-                        <div className={`text-3xl font-light text-white transition-all duration-300 transform ${
+                        <div className={`text-3xl font-light text-black transition-all duration-300 transform ${
                           isOpen ? 'rotate-45' : 'rotate-0'
                         }`}>
                           +
@@ -179,15 +179,15 @@ const Services = () => {
                     
                     <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
                       <div className="space-y-8 px-6 pb-8">
-                        <p className="text-xl text-white leading-relaxed max-w-4xl">
+                        <p className="text-xl text-black leading-relaxed max-w-4xl">
                           {service.description}
                         </p>
                         
                         <div className="grid md:grid-cols-2 gap-6">
                           {service.subServices.map((subService, subIndex) => (
-                            <div key={subIndex} className="border-2 border-white p-8 bg-[#040214] hover:border-primary/30 transition-all duration-300 group/sub relative overflow-hidden">
+                            <div key={subIndex} className="border-2 border-black p-8  hover:border-primary/30 transition-all duration-300 group/sub relative overflow-hidden">
                               {/* Background image that appears on hover */}
-                              <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover/sub:opacity-30 transition-opacity duration-500" 
+                              <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover/sub:opacity-95 transition-opacity duration-500" 
                                 style={{
                                   backgroundImage: `url('https://images.unsplash.com/photo-${
                                     subIndex % 4 === 0 ? '1557804506-669a67965ba0' : 
@@ -198,14 +198,14 @@ const Services = () => {
                                 }}>
                               </div>
                               {/* Dark overlay on hover */}
-                              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/sub:opacity-100 transition-opacity duration-300"></div>
+                              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/sub:opacity-80 transition-opacity duration-300"></div>
                               <div className="relative z-10">
                                 <div className="flex items-center justify-between mb-6">
-                                  <h4 className="text-2xl font-bold text-foreground group-hover/sub:text-white uppercase tracking-wide transition-colors duration-300">
+                                  <h4 className="text-2xl font-bold text-black group-hover/sub:text-white  uppercase tracking-wide transition-colors duration-300">
                                     {subService.title}
                                   </h4>
                                   <svg 
-                                    className="w-8 h-8 text-muted-foreground group-hover/sub:text-white group-hover/sub:translate-x-1 transition-all duration-300"
+                                    className="w-8 h-8 text-black    group-hover/sub:text-white group-hover/sub:translate-x-1 transition-all duration-300"
                                     fill="none" 
                                     stroke="currentColor" 
                                     viewBox="0 0 24 24"
@@ -213,7 +213,7 @@ const Services = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                   </svg>
                                 </div>
-                                <p className="text-lg text-white group-hover/sub:text-white/90 leading-relaxed transition-colors duration-300">
+                                <p className="text-lg text-black group-hover/sub:text-white  leading-relaxed transition-colors duration-300">
                                   {subService.description}
                                 </p>
                               </div>

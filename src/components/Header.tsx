@@ -71,7 +71,7 @@ const Header = () => {
               isScrolled ? "text-black hover:text-primary" : "text-white hover:text-black"
             }`}
           >
-            In the Spotlight
+            Client Showcase
           </a>
           <a
             onClick={() => navigate("/blogs")}
@@ -136,7 +136,7 @@ const Header = () => {
               }}
               className="block py-2 text-foreground hover:text-primary transition-colors cursor-pointer"
             >
-              In the Spotlight
+              Client Showcase
             </a>
             <a
               onClick={() => {

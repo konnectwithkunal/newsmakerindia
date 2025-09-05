@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Volume2, VolumeX } from 'lucide-react'; // using lucide icons
 
 function Hero({ setNavbarTransparent }) {
   const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,10 +28,17 @@ function Hero({ setNavbarTransparent }) {
     };
   }, [setNavbarTransparent]);
 
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
   return (
     <div
       ref={videoRef}
-      className="w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden"
       style={{ margin: 0, padding: 0 }}
     >
       <motion.section
@@ -39,15 +48,28 @@ function Hero({ setNavbarTransparent }) {
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <video
+          ref={videoRef}
           src="/video/hero.mp4"
           autoPlay
           loop
-          muted
+          muted={isMuted}
           playsInline
           className="w-full h-full object-cover pointer-events-none select-none block"
           tabIndex={-1}
         />
       </motion.section>
+
+      {/* Mute/Unmute Button */}
+      <button
+        onClick={toggleMute}
+        className="absolute bottom-10 right-10 bg-black/40 p-3 rounded-full hover:bg-black/70 transition-colors"
+      >
+        {isMuted ? (
+          <VolumeX size={24} className="text-[#F05656]" />
+        ) : (
+          <Volume2 size={24} className="text-[#F05656]" />
+        )}
+      </button>
     </div>
   );
 }

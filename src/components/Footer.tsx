@@ -129,7 +129,7 @@ const Footer = () => {
             <li><Link to="/" className="text-gray-700 text-xl hover:text-primary">About us</Link></li>
             <li><Link to="/services" className="text-gray-700 text-xl hover:text-primary">Services</Link></li>
             <li><Link to="/people" className="text-gray-700 text-xl hover:text-primary">People</Link></li>
-            <li><Link to="/news" className="text-gray-700 text-xl hover:text-primary">In the Spotlight</Link></li>
+            <li><Link to="/news" className="text-gray-700 text-xl hover:text-primary">Client Showcase</Link></li>
             <li><Link to="/blogs" className="text-gray-700 text-xl hover:text-primary">Blog</Link></li>
           </ul>
         </nav>
