@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Volume2, VolumeX } from 'lucide-react'; // using lucide icons
+import { Volume2, VolumeX } from 'lucide-react';
 
 function Hero({ setNavbarTransparent }) {
   const videoRef = useRef(null);
@@ -49,14 +49,26 @@ function Hero({ setNavbarTransparent }) {
       >
         <video
           ref={videoRef}
-          src="/video/hero.mp4"
           autoPlay
           loop
           muted={isMuted}
           playsInline
           className="w-full h-full object-cover pointer-events-none select-none block"
           tabIndex={-1}
-        />
+        >
+          {/* Mobile video */}
+          <source
+            src="/video/hero_mob.mp4"
+            media="(max-width: 768px)"
+            type="video/mp4"
+          />
+          {/* Desktop video */}
+          <source
+            src="/video/hero.mp4"
+            media="(min-width: 769px)"
+            type="video/mp4"
+          />
+        </video>
       </motion.section>
 
       {/* Mute/Unmute Button */}
