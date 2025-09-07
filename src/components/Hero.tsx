@@ -53,7 +53,7 @@ function Hero({ setNavbarTransparent }) {
           loop
           muted={isMuted}
           playsInline
-          className="w-full h-full object-cover pointer-events-none select-none block"
+          className="w-full object-cover pointer-events-none select-none block h-screen md:h-screen sm:h-[90vh]"
           tabIndex={-1}
         >
           {/* Mobile video */}
