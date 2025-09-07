@@ -52,7 +52,7 @@ const Services = () => {
     },
     {
       title: "Crisis Management",
-      description: "In today's fast-paced and unpredictable business environment, crises can strike at any moment, threatening your organization's reputation and operations. At Newsmaker Media and Communications, we understand the importance of effective crisis management.",
+      description: "In today's fast-paced and unpredictable business environment, crises can strike at any moment, threatening your organization's reputation and operations. At Newsmaker Media Group, we understand the importance of effective crisis management.",
       subServices: [
         {
           title: "Online Reputation Management",
