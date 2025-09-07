@@ -74,7 +74,7 @@ function Hero({ setNavbarTransparent }) {
       {/* Mute/Unmute Button */}
       <button
         onClick={toggleMute}
-        className="absolute bottom-20 md:bottom-10 right-10 bg-black/40 p-3 rounded-full hover:bg-black/70 transition-colors"
+        className="absolute bottom-24 md:bottom-10 right-10 bg-black/40 p-3 rounded-full hover:bg-black/70 transition-colors"
       >
         {isMuted ? (
           <VolumeX size={24} className="text-[#F05656]" />
