@@ -15,13 +15,13 @@ const People = () => {
       name: "Simran Nagpal",
       position: "Managing Director",
       image:
-        "https://images.ctfassets.net/8fjb1swihtib/5BgZne3x0JfBOvcJD8rqqr/cf05cedaef6245812366e306df0cb831/6.png?w=360",
+        "/img/simrann.jpeg",
     },
     {
       name: "Romita Khurana Sahni",
       position: "Managing Director",
       image:
-        "https://images.ctfassets.net/8fjb1swihtib/3ZP61BgM7wV2IKzkaBfMEl/f264b4c126de78dab96280eda72a45ad/3.png?w=360",
+        "/img/romita.jpeg",
     },
   ];
 
@@ -44,31 +44,20 @@ const People = () => {
       location: "LOS ANGELES",
       image: "/img/aditi.jpeg",
     },
-    {
-      name: "Soumyashree Mishra",
-      position: "Account Manager",
-      location: "SYDNEY",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=360&h=400&fit=crop&crop=face",
-    },
+    
     {
       name: "Simran Upadhayay",
       position: "Account Executive",
       location: "SINGAPORE",
       image: "/img/simran.jpeg",
     },
-    {
-      name: "Khushi Verma",
-      position: "Account Executive",
-      location: "HONG KONG",
-      image: "/img/khushi.jpeg",
-    },
+    
     {
       name: "Diksha Gautam",
       position: "Brand Strategist",
       location: "HONG KONG",
       image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=360&h=400&fit=crop&crop=face",
+        "/img/diksha.jpeg",
     },
   ];
 

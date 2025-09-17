@@ -135,13 +135,28 @@ const Footer = () => {
         </nav>
       </div>
 
-      <div className="border-t border-gray-300 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between">
-        <p className="text-gray-600">© 2025 Newsmaker Media Group. All rights reserved.</p>
-        <div className="flex space-x-8 mt-4 md:mt-0">
-          <a href="#" className="text-gray-600 hover:text-primary">Privacy Policy</a>
-          <a href="#" className="text-gray-600 hover:text-primary">Terms of Service</a>
-        </div>
-      </div>
+      <div className="border-t border-gray-300 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between text-center gap-4">
+            <p className="text-gray-600 text-sm">
+              © 2025 Newsmaker Media Group. All rights reserved.
+            </p>
+            {/* --- Start of new code --- */}
+            <p className="text-gray-600 text-sm">
+              ♥️ Made with love by{" "}
+              <a
+                href="http://www.webalchemy.co.in/" // Change this to the actual URL for webalchemy
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary underline"
+              >
+                webalchemy
+              </a>
+            </p>
+            {/* --- End of new code --- */}
+            <div className="flex space-x-8 mt-4 md:mt-0">
+              <a href="#" className="text-gray-600 hover:text-primary text-sm">Privacy Policy</a>
+              <a href="#" className="text-gray-600 hover:text-primary text-sm">Terms of Service</a>
+            </div>
+          </div>
     </div>
   </section>
 
