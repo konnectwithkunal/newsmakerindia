@@ -1,7 +1,7 @@
 // src/App.tsx
 
-import { Toaster } from "@/components/ui/toaster"; // Keep this one
-// import { Toaster as Sonner } from "@/components/ui/sonner"; // <-- REMOVE THIS LINE
+import { Toaster } from "@/components/ui/toaster";
+import { ToastProvider } from "@/components/ui/toast"; // 1. IMPORT THE PROVIDER
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -21,21 +21,23 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster /> {/* This is now the only toaster */}
-      {/* <Sonner /> REMOVE THIS LINE AS WELL */}
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/people" element={<People />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      {/* 2. WRAP YOUR APP WITH THE PROVIDER */}
+      <ToastProvider> 
+        <Toaster />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/people" element={<People />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ToastProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
