@@ -54,7 +54,7 @@ const Contact = () => {
   setIsSubmitting(true);
 
   try {
-    const res = await fetch("https://newsmakerindia.onrender.com/send", {
+    const res = await fetch("/api/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
