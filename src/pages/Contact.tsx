@@ -51,36 +51,47 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  try {
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch("/api/send-email", { // The updated API endpoint
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const result = await res.json();
+      // --- Start of Changes ---
 
-    toast({
-      title: "Message sent!",
-      description: result.message || "Thanks for reaching out. We'll reply soon.",
-    });
+      if (!res.ok) {
+        // If the server response is not OK (e.g., status 400 or 500), throw an error.
+        const errorResult = await res.json();
+        throw new Error(errorResult.message || "An unknown error occurred.");
+      }
 
-    form.reset();
-  } catch (error) {
-    console.error(error);
-    toast({
-      title: "Error",
-      description: "Something went wrong while sending your message.",
-      variant: "destructive",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+      const result = await res.json();
+
+      toast({
+        title: "Message sent!",
+        description: result.message || "Thanks for reaching out. We'll reply soon.",
+      });
+
+      form.reset();
+      
+      // --- End of Changes ---
+
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong while sending your message.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
 
   return (
