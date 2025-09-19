@@ -13,13 +13,13 @@ const People = () => {
     },
     {
       name: "Simran Nagpal",
-      position: "Managing Director",
+      position: "Head, Business Development",
       image:
         "/img/simrann.jpeg",
     },
     {
       name: "Romita Khurana Sahni",
-      position: "Managing Director",
+      position: "Marketing Head",
       image:
         "/img/romita.jpeg",
     },
@@ -54,7 +54,7 @@ const People = () => {
     
     {
       name: "Diksha Gautam",
-      position: "Brand Strategist",
+      position: "Account Executive",
       location: "HONG KONG",
       image:
         "/img/diksha.jpeg",
@@ -101,11 +101,11 @@ const People = () => {
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-bold mb-12 text-black">Leadership</h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
               {leadership.map((person, index) => (
-                <div
+                <div  
                   key={index}
-                  className="relative group overflow-hidden  shadow-md hover:shadow-2xl transition-all duration-500"
+                  className="relative group overflow-hidden  shadow-md hover:shadow-2xl transition-all duration-500 h-[500px]"
                 >
                   {/* Glow Background */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
